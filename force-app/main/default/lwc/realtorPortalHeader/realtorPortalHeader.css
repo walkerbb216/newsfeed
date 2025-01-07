@@ -1,0 +1,47 @@
+.fr {
+    margin: -0.375rem;
+  }
+  .aqm {
+    padding: 0.375rem;
+  }
+  .t {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .og {
+    height: 2rem;
+  }
+  .tm {
+    width: auto;
+  }
+  .czq {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+  .avz {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  .awf {
+    font-weight: 600;
+  }
+  .awo {
+    line-height: 1.5rem;
+  }
+  .bag {
+    --tw-text-opacity: 1;
+    color: rgb(17 24 39 / var(--tw-text-opacity));
+  }
+  .cxn {
+    flex: 1 1 0%;
+  }
+  .czg {
+    justify-content: flex-end;
+  }

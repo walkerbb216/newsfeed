@@ -1,0 +1,167 @@
+<template>
+    <div class="flex-col w-72 z-50 inset-y-0 fixed hidden lg:block flex">
+        <div
+            class="pb-4 px-5 bg-white border-gray-200 border-r overflow-y-auto gap-y-5 flex-col grow flex h-full">
+            <div class="items-center flex shrink-0 h-16">
+                <!-- logo -->
+
+                <span class="font-semibold text-lg text-indigo-600 ml-2">Luxe
+                    Mortgage</span>
+            </div>
+            <nav class="flex flex-1 flex-col">
+                <ul class="gap-y-7 flex-col flex-1 flex">
+                    <li>
+                        <ul class="negmargin">
+                            <li>
+                                <div data-type="nav"
+                                    class="font-semibold text-sm p-2 bg-gray-50  text-indigo-600 rounded-md gap-x-3 flex hover:text-indigo-600 hover:bg-gray-50 cursor-pointer"
+                                    onclick={handleNav} data-id="newsfeed">
+                                    <svg data-id="newsfeed" class="w-6 h-6 font-semibold" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7h1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h11.5M7 14h6m-6 3h6m0-10h.5m-.5 3h.5M7 7h3v3H7V7Z"/>
+                                      </svg>
+                                    <span data-id="newsfeed"
+                                        class="content-center">Newsfeed</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div data-type="nav"
+                                    class="font-semibold text-sm p-2 rounded-md gap-x-3 flex hover:text-indigo-600 hover:bg-gray-50 cursor-pointer"
+                                    onclick={handleNav} data-id="hve">
+                                    <svg data-id="hve" style="height:24px"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        aria-hidden="true" data-slot="icon"
+                                        class="font-semibold"><path
+                                            data-id="hve"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path></svg>
+                                    <span data-id="hve"
+                                        class="content-center">Home Value
+                                        Estimator</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div data-type="nav"
+                                    class="font-semibold text-sm p-2 rounded-md gap-x-3 flex hover:text-indigo-600 hover:bg-gray-50 cursor-pointer"
+                                    onclick={handleNav} data-id="classPortal">
+                                    <svg style="height:24px"
+                                        data-id="classPortal"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        aria-hidden="true" data-slot="icon"
+                                        class="ayr bto nm vf"><path
+                                            data-id="classPortal"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"></path></svg>
+                                    <span data-id="classPortal"
+                                        class="content-center">Realtor
+                                        Classes</span>
+                                </div>
+                            </li>
+                            <template if:true={brett}>
+                                <div data-type="nav"
+                                    class="font-semibold text-sm p-2 rounded-md gap-x-3 flex hover:text-indigo-600 hover:bg-gray-50 cursor-pointer"
+                                    onclick={handleNav} data-id="marketingkits">
+                                    <svg data-id="marketingkits"
+                                        style="height:24px"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        aria-hidden="true" data-slot="icon"
+                                        class="ayr bto nm vf"><path
+                                            data-id="marketingkits"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"></path></svg>
+                                    <span data-id="marketingkits"
+                                        class="content-center">Marketing
+                                        Kits</span>
+                                </div>
+                                <div data-type="nav"
+                                    class="font-semibold text-sm p-2 rounded-md gap-x-3 flex hover:text-indigo-600 hover:bg-gray-50 cursor-pointer"
+                                    onclick={handleNav} data-id="dpa">
+                                    <svg xmlns="http://www.w3.org/2000/svg" data-id="dpa" style="height: 24px;"
+                                        fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        aria-hidden="true" data-slot="icon"
+                                        class="azg btx nm vf"><path data-id="dpa"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"></path></svg>
+                                    <span data-id="dpa"
+                                        class="content-center">DPA
+                                        Resources</span>
+                                </div>
+                            </template>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- 
+
+    <div class="nav-wrapper relative">
+        <div class="hidden lg:block">
+            <ul class="space-y-2">
+                <li>
+                    <div onclick={handleNav} data-id="hve" class="cursor-pointer text-base text-gray-700 font-semibold rounded-md flex items-center p-2 hover:bg-gray-50 group">
+                        Home Value Estimator
+                    </div>
+                </li>
+                <li>
+                    <div onclick={handleNav} data-id="classPortal" class="cursor-pointer text-base text-gray-700 font-semibold rounded-md flex items-center p-2 hover:bg-gray-50 group">
+                        Realtor Classes
+                    </div>
+                </li>
+                <template if:true={brett}>
+                    <div onclick={handleNav} data-id="marketingkits" class="cursor-pointer text-base text-gray-700 font-semibold rounded-md flex items-center py-1 px-2 hover:bg-gray-50 group">
+                        Marketing Kits
+                    </div>
+
+                </template>
+            </ul>
+        </div>
+    -->
+    <div class="mobile-wrapper absolute lg:hidden">
+        <svg onclick={showMenu} xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-6 text-gray-700" viewBox="0 0 512 512" version="1.1">
+            <path d stroke="none" fill="currentColor" fill-rule="evenodd" />
+            <path
+                d="M 93.463 103.591 C 83.715 107.053, 76.667 117.295, 76.667 128 C 76.667 135.213, 80.494 143.613, 85.758 147.952 C 93.565 154.387, 82.661 154, 256 154 C 429.339 154, 418.435 154.387, 426.242 147.952 C 431.506 143.613, 435.333 135.213, 435.333 128 C 435.333 120.787, 431.506 112.387, 426.242 108.048 C 418.429 101.608, 429.417 101.992, 255.572 102.079 C 121.013 102.146, 96.899 102.371, 93.463 103.591 M 93.463 231.580 C 83.700 235.074, 76.667 245.300, 76.667 256 C 76.667 263.225, 80.496 271.615, 85.782 275.972 C 93.406 282.256, 90.391 282.073, 181.076 281.773 C 272.868 281.469, 266.011 281.996, 273.838 274.638 C 279.492 269.322, 281.454 264.521, 281.454 256 C 281.454 247.479, 279.492 242.678, 273.838 237.362 C 266.003 229.995, 272.964 230.521, 180.500 230.317 C 110.321 230.163, 96.876 230.358, 93.463 231.580 M 93.463 359.591 C 83.715 363.053, 76.667 373.295, 76.667 384 C 76.667 391.213, 80.494 399.613, 85.758 403.952 C 93.565 410.387, 82.661 410, 256 410 C 429.339 410, 418.435 410.387, 426.242 403.952 C 431.506 399.613, 435.333 391.213, 435.333 384 C 435.333 376.787, 431.506 368.387, 426.242 364.048 C 418.429 357.608, 429.417 357.992, 255.572 358.079 C 121.013 358.146, 96.899 358.371, 93.463 359.591"
+                stroke="none" fill="currentColor" fill-rule="evenodd" />
+        </svg>
+        <div class="mobile hidden">
+            <div
+                class="menu bg-white p-3 pt-1 w-52 border border-gray-200 rounded shadow">
+                <ul class="space-y-3">
+                    <li>
+                        <div onclick={handleNav} data-id="hve"
+                            class="cursor-pointer text-base text-gray-700 font-semibold rounded-md flex items-center py-1 px-2 hover:bg-gray-50 group">
+                            Home Value Estimator
+                        </div>
+                    </li>
+                    <li>
+                        <div onclick={handleNav} data-id="classPortal"
+                            class="cursor-pointer text-base text-gray-700 font-semibold rounded-md flex items-center py-1 px-2 hover:bg-gray-50 group">
+                            Realtor Classes
+                        </div>
+                    </li>
+                    <template if:true={brett}>
+                        <div onclick={handleNav} data-id="marketingkits"
+                            class="cursor-pointer text-base text-gray-700 font-semibold rounded-md flex items-center py-1 px-2 hover:bg-gray-50 group">
+                            Marketing Kits
+                        </div>
+
+                    </template>
+                </ul>
+            </div>
+            <div onclick={showMenu} class="backdrop"></div>
+        </div>
+    </div>
+</template>

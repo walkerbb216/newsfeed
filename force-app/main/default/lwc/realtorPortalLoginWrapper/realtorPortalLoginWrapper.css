@@ -1,0 +1,43 @@
+.background{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+.wrapper{
+    position: relative;
+    z-index: 2;
+    margin-top: 60px;
+}
+
+.loginBtn{
+    background-color: #1F2DFE;
+}
+
+.loginBtn:hover{
+    background-color: #1e40af;
+}
+
+.forgotPass{
+    color: #1F2DFE;
+}
+
+input:focus{
+    --tw-ring-color: #1F2DFE;
+}
+
+.disabledButton{
+    background-color: #c9c9c9 !important;
+}
+
+.error {
+    line-height: 20px;
+}
+
+.errorText{
+    width: 330px;
+}

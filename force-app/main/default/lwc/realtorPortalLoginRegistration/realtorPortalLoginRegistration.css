@@ -1,0 +1,351 @@
+.background{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+.wrapper{
+    position: relative;
+    z-index: 2;
+    margin-top: unset !important;
+}
+
+input:focus{
+    --tw-ring-color: #1F2DFE;
+}
+
+.loginBtn{
+    background-color: #1F2DFE;
+}
+
+.loginBtn:hover{
+    background-color: #1e40af;
+}
+
+.disabledButton{
+    background-color: #c9c9c9 !important;
+}
+
+.passError{
+    position: absolute;
+    top: 70px;
+    font-size: 12px;
+    color: #dc2626;
+}
+
+.disabledButton{
+    background-color: #c9c9c9 !important;
+}
+
+.error {
+    line-height: 20px;
+}
+
+.errorText{
+    width: 330px;
+}
+
+body {
+    background-size: cover;    
+    background-image: url("/resource/loginBackground"); /*choose image from static resource*/
+}
+
+.center {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button {
+    background-color: #0052cc;
+    color: white;
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 0.5rem;
+    /* font-size: 16px;
+    font-family: Arial; */
+    font-size: 16px;
+    font-family: var(--lwc-fontFamily,Montserrat);
+    font-weight: 700;
+}
+@media (max-width: 1000px) {
+    .main-container{
+        margin-top: 30% !important;
+    }
+}
+
+.disabledButton{
+    background-color: #c9c9c9 !important;
+}
+.main-container{
+    margin-top: 10%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-heading {
+
+    font-size: 20px;
+    color: black;
+}
+
+.sub-heading {
+
+    font-size: 14px;
+    color: black;
+}
+
+.input-icon {
+
+    position: absolute;
+    margin: 0.9rem 0.7rem;
+}
+
+.input-element {
+
+    padding: 0.5rem 0rem 0.5rem 2rem;
+    font-size: 16px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.forgot-password-text {
+
+    color: #CCBFBF;
+    font-size: 14px;
+    text-align: left;
+}
+.go-back-text {
+
+    color: #474D58;
+    font-size: 14px;
+    text-align: left;
+}
+
+.register-text {
+
+    color: #CCBFBF;
+    font-size: 14px;
+    float: right;
+}
+.vectorpng{
+    margin: 3rem 0; 
+}
+
+.error {
+
+    text-align: center;
+    word-break: break-word;
+    max-width: 20rem;
+    color: #ff9e9e;
+}
+
+body {
+    background-size: cover;    
+    background-image: url("/resource/loginBackground"); /*choose image from static resource*/
+}
+
+.center {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button {
+    
+    background-color: #0052cc;
+    color: white;
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 0.5rem;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+.main-heading {
+
+    font-size: 20px;
+    color: black;
+}
+
+.sub-heading {
+
+    font-size: 14px;
+    color: black;
+}
+
+.input-icon {
+
+    position: absolute;
+    margin: 0.9rem 0.7rem;
+}
+
+.input-element {
+
+    padding: 0.5rem 0rem 0.5rem 2rem;
+    font-size: 16px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.forgot-password-text {
+
+    color: #CCBFBF;
+    font-size: 14px;
+    text-align: left;
+}
+
+.register-text {
+
+    color: #CCBFBF;
+    font-size: 14px;
+    float: right;
+}
+
+.error {
+
+    text-align: center;
+    word-break: break-word;
+    max-width: 20rem;
+    color: #ff9e9e;
+}
+
+.register-heading {
+
+    max-width: 25rem;
+    font-weight: 700;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.slds-grid_vertical .slds-col {
+
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+.terms-and-conditions-close {
+
+    float: right;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.terms-and-conditions-header, .terms-and-conditions-body {
+   
+    background-color: #170B45;
+    color: black;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.terms-and-conditions-header {
+
+    border-bottom: none;
+}
+
+.terms-and-conditions-body {
+
+    border-top: none;
+}
+
+.terms-and-conditions-heading {
+
+    color: black;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.terms-and-conditions-button:hover, .terms-and-conditions-button:focus {
+
+    background-color: black;
+}
+
+.tooltip {
+    position: relative;   
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    max-width: 250px;
+    width: max-content;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 3px;
+    position: absolute;
+    z-index: 1;    
+    margin-left: 0.5rem;
+    bottom: 0;
+    left: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    margin-left: -6px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    transform: rotate(90deg);
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+  .tooltipEmail:hover ~ .usernameColumn .tooltip .tooltiptext {
+
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .tooltipError {
+
+    background-color: red !important;
+    border: 1px solid black;
+    color:black !important;
+  }
+
+  .tooltip .tooltipError::after {
+
+    border-color: black transparent transparent transparent !important;
+  }
+
+  .tooltipShow {
+
+    display: block;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #ff9e9e;
+  }
+
+  .tooltipHide {
+
+    display: none;
+  }
+
+
+.terms-and-conditions-link {
+
+    color: black;
+    text-decoration: underline;
+}

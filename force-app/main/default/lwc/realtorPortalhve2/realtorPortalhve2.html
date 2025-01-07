@@ -1,0 +1,113 @@
+<template>
+            <div class="flex flex-1">
+    <div class="rounded-lg shadow bg-white dark:bg-gray-800 m-3 carder" style="max-width: 610px; min-width: 610px">
+        <div class="px-4 py-5 p-6">
+            <h3
+                class="text-base font-semibold leading-6 text-gray-900">Home Value Estimator</h3>
+            <div class="mt-2 max-w-xl text-sm text-gray-500">
+                <template if:false={parsedProperty}>
+                    <!-- <template if:true={valueData}>
+                        <div style="min-height: 285px;">
+                            <lightning-formatted-rich-text
+                                value={valueData}></lightning-formatted-rich-text>
+                        </div>
+                    </template> -->
+                </template>
+                <template if:true={parsedProperty}>
+                    <div class="flex flex-col w-full gap-6">
+                        <div class="flex gap-2 flex-col">
+                            <p class="property">
+                                {addressString}
+                            </p>
+                            <p class="propertyDetails">
+                                {propertyDetails}
+                            </p>
+                            <p class="propertyRange">
+                                Range: {propertyRange}
+                            </p>
+                            <p class="disclaimer">
+                                *Estimated property values are: (i) based on available data; (ii) are not guaranteed or warranted; (iii) do not constitute an appraisal; and (iv) should not be relied upon in lieu of an appraisal.
+                            </p>
+                        </div> 
+                        <div class="estValueWrapper">
+                            <p class="estValue">
+                                *Estimated Value
+                            </p>
+                            <h1 class="value">
+                                {propertyEstimatedCost}
+                            </h1>
+                            <p class="tax">
+                                Annual Property taxes:
+                                <span class="bold">{propertyAnnualTax}</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </template>
+                
+                <template if:false={valueData}>
+                    <c-portal-address-search onselection={handleSelection}></c-portal-address-search>
+                </template>
+            </div>
+            <div class="mt-6">
+                <div class="flex justify-between">
+                    <div>
+                        <button
+                            type="button"
+                            class="prim inline-flex items-center rounded-md bg-indigo-600 hover:bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm"
+                            onclick={handleClick}
+                            onmousedown={handleClick}
+                            disabled={disableButtons}>
+                            <template if:true={searchDisabled}>
+                                <div style="width: 42.667px">
+                                <svg class="animate-spin mr-3 h-5 w-5 text-white m-auto ml-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                  </svg> 
+                                </div>
+                            </template>
+                            <template if:false={searchDisabled}>{searchText}</template>
+                              </button>
+                    </div>
+                    <template if:false={searchError}>
+                        <template if:true={valueData}>
+                                <div class="flex justify-end">
+                                    <div>
+                                        <!-- <button
+                                            type="button"
+                                            class="inline-flex pdfButton items-center hover:border-gray-50 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-gray-300"
+                                            onclick={download}
+                                            disabled={disableButtons}>View
+                                            PDF</button> -->
+                                        <button
+                                            type="button"
+                                            class="prim inline-flex ml-2 items-center rounded-md bg-indigo-600 hover:bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm"
+                                            onclick={openInteractive}
+                                            disabled={disableButtons}>
+                                            <template if:true={interactiveDisabled}>
+                                                <div style="width: 42.667px">
+                                                <svg class="animate-spin mr-3 h-5 w-5 text-white m-auto ml-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                  </svg> 
+                                                </div>
+                                            </template>
+                                            <template if:false={interactiveDisabled}>View
+                                            Interactive</template></button>
+
+                                    </div>
+                                </div>
+
+                        </template>
+                    </template>
+
+                </div>
+                <template if:true={searchError}>
+                    <p>{searchError}</p>
+                </template>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+</template>

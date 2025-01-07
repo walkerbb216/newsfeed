@@ -1,0 +1,12 @@
+.wrapper{
+    width: 100%;
+
+}
+
+
+@media (min-width: 1024px) { 
+    
+    .wrapper{
+        margin-left: 18rem;
+    }
+     }

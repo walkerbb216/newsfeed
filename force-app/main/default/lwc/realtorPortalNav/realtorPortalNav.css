@@ -1,0 +1,29 @@
+li{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.menu {
+    z-index: 10;
+    position: absolute;
+    top: 25px;
+}
+
+.backdrop {
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.mobile-wrapper {
+    top: 15px;
+    left: 11px;
+}
+
+.negmargin{
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}

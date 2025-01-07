@@ -1,0 +1,29 @@
+<template>
+    <div>
+        <div class="flex m-auto w-full ">
+            <c-realtor-portal-nav
+                onnavclick={handleNav}></c-realtor-portal-nav>
+            <div class="wrapper lg:px-8 lg:p-6 pt-8">
+                <template if:true={newsfeed}>
+                    <c-realtor-portal-newsfeed></c-realtor-portal-newsfeed>
+                </template>
+                <template if:true={hve}>
+                    <c-realtor-portalhve2></c-realtor-portalhve2>
+                </template>
+                <template if:true={classPortal}>
+                    <c-realtor-portal-class></c-realtor-portal-class>
+                </template>
+                <template if:true={brett}>
+                    <template if:true={marketingPage}>
+                        <c-realtor-portal-marketing-kit-list
+                            onnewkit={openNewKit}></c-realtor-portal-marketing-kit-list>
+                    </template>
+                    <template if:true={dpa}>
+                        <c-realtor-portaldpa
+                            ></c-realtor-portaldpa>
+                    </template>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>
