@@ -1,23 +1,31 @@
 <template>
     <div class="py-6 pr-8">
-        <div>
-            <h1 class="title">Newsfeed</h1>
-            <p>Showing 2 of {total}</p>
+        <div class="ml-3">
+            <h1 class="text-base font-semibold leading-6 text-gray-900">Newsfeed</h1>
+            <p>Showing {currStart} of {total}</p>
         </div>
         <div class="space-y-4">
-            <template for:each={newsfeedCopy} for:item="post">
-                <div key={post.id} class="newscard rounded shadow-sm border border-gray-200 bg-white m-3 ml-0">
-                    <h2 class="text-xl p-3">{post.title}</h2>
+            <template for:each={currentView} for:item="post">
+                <div key={post.id} class="newscard rounded-lg shadow bg-white m-3">
+                    <h2 class="text-lg p-3 font-semibold">{post.title}</h2>
                     <div class="bg-gray-300 w-full h-64">
                     </div>
-                    <p class="posttext p-3">{post.shorttext}</p>
+                    <p class="p-3">{post.shorttext}</p>
                     <template if:true={post.readmore}>
-                        <button data-id={post.id} onclick={readMore} class="text-white rounded-lg text-center m-3 px-3 py-2 bg-indigo-600 hover:bg-indigo-700 cursor-pointer">Read More</button>
+                        <button data-id={post.id} onclick={readMore} class="inline-flex items-center rounded-md bg-indigo-600 hover:bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm m-3">Read More</button>
                     </template>
                     <template if:false={post.readmore}>
-                        <button data-id={post.id} onclick={readLess} class="text-white rounded-lg text-center m-3 px-3 py-2 bg-indigo-600 hover:bg-indigo-700 cursor-pointer">Read Less</button>
+                        <button data-id={post.id} onclick={readLess} class="inline-flex items-center rounded-md bg-indigo-600 hover:bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm m-3">Read Less</button>
                     </template>
                 </div>
+            </template>
+        </div>
+        <div class="m-3 mt-4 flex items-center gap-3 pt-5">
+            <template if:true={prevBtn}>
+                <button onclick={handlePrev} class="inline-flex items-center rounded-md border border-indigo-600 hover:border-indigo-700 px-3 py-2 text-sm text-indigo-600 shadow-sm hover:bg-indigo-700 hover:text-white">Prev</button>
+            </template>
+            <template if:true={nextBtn}>
+                <button onclick={handleNext} class="inline-flex items-center rounded-md border border-indigo-600 hover:border-indigo-700 px-3 py-2 text-sm text-indigo-600 shadow-sm hover:bg-indigo-700 hover:text-white">Next</button>
             </template>
         </div>
     </div>
